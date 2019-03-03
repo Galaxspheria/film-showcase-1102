@@ -6,6 +6,7 @@ import './styles/App.css';
 
 import Home from './components/Home';
 import About from './components/About';
+import Author from './components/Author';
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class App extends Component {
   componentDidMount() {
     var that = this
     Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/14i0nvudUdYZkTer6euXjCnceQKkxGRq5dStdpHlPUn4/edit?usp=sharing',
-      callback: function(data) { 
+      callback: function(data) {
           for (var d in data) {
             if (data[d].Image) {
               data[d].Image = that.driveURLConvert(data[d].Image);
@@ -45,6 +46,7 @@ class App extends Component {
                 </header>
                 <Route path="/" exact render={(props) => <Home {...props} data={this.state.data} />} />
                 <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
+                <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
               </div>
             :<div className="loader"></div>}
           </Router>
