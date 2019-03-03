@@ -4,7 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        {this.props.data.map((d, i) => (
+        {this.props.data.film.elements.map((d, i) => (
             <p key={i}>
                 {d.Film}
                 {d.Image?

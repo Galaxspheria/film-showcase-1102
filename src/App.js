@@ -21,14 +21,14 @@ class App extends Component {
     var that = this
     Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/14i0nvudUdYZkTer6euXjCnceQKkxGRq5dStdpHlPUn4/edit?usp=sharing',
       callback: function(data) {
-          for (var d in data) {
-            if (data[d].Image) {
-              data[d].Image = that.driveURLConvert(data[d].Image);
+          for (var d in data.film.elements) {
+            if (data.film.elements[d].Image) {
+              data.film.elements[d].Image = that.driveURLConvert(data.film.elements[d].Image);
             }
           }
           that.setState({data})
       },
-      simpleSheet: true } )
+      simpleSheet: false } )
   }
 
   driveURLConvert(url) {
