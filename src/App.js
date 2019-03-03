@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Tabletop from 'tabletop';
+import './App.css';
+
+import Home from './components/Home'
+import About from './components/About'
 
 class App extends Component {
   constructor(props) {
@@ -27,20 +31,26 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          {this.state.data?
-            this.state.data.map((d) => (
-              <p>
-                {d.Film}
-                {d.Image?
-                  <img src={this.driveURLConvert(d.Image)}></img>
-                :null}
-              </p>
-            ))
-          :<div className="loader"></div>}
-        </header>
-      </div>
+        <div className="App">
+          <Router>
+            {this.state.data?
+              <div>
+                <header className="App-header">
+                  {this.state.data.map((d) => (
+                        <p>
+                          {d.Film}
+                          {d.Image?
+                            <img src={this.driveURLConvert(d.Image)}></img>
+                          :null}
+                        </p>
+                  ))}
+                </header>
+                <Route path="/" exact component={Home} />
+                <Route path="/about/" component={About} />
+              </div>
+            :<div className="loader"></div>}
+          </Router>
+        </div>
     );
   }
 }
