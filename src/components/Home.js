@@ -4,7 +4,14 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        Home
+        {this.props.data.map((d, i) => (
+            <p key={i}>
+                {d.Film}
+                {d.Image?
+                    <img alt={d.Film} src={d.Image}></img>
+                :null}
+            </p>
+        ))}
       </div>
     );
   }
