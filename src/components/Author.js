@@ -10,7 +10,7 @@ class Author extends Component {
 
     render() {
         return (
-            <div className="Author">
+            <div className="Author page-fade">
             Author {this.state.id}
             </div>
         );

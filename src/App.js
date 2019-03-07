@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Tabletop from 'tabletop';
 
-import './styles/App.css';
+import './styles/App.scss';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import About from './components/About';
+import Decade from './components/Decade';
 import Author from './components/Author';
 
 class App extends Component {
@@ -41,14 +44,14 @@ class App extends Component {
           <Router>
             {this.state.data?
               <div>
-                <header className="App-header">
-                  Header
-                </header>
+                <Header/>
                 <Route path="/" exact render={(props) => <Home {...props} data={this.state.data} />} />
                 <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
+                <Route path="/decade/" render={(props) => <Decade {...props} data={this.state.data} />} />
                 <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
+                <Footer/>
               </div>
-            :<div className="loader"></div>}
+            :<div className="loader-parent"><div className="loader"></div></div>}
           </Router>
         </div>
     );
