@@ -35,6 +35,12 @@ class App extends Component {
               data.decade.elements[d].Image = that.driveURLConvert(data.decade.elements[d].Image)
             }
           }
+          for (d in data.author.elements) {
+            console.log(data.author.elements[d])
+            if (data.author.elements[d]['Portrait/Headshot Link']) {
+              data.author.elements[d]['Portrait/Headshot Link'] = that.driveURLConvert(data.author.elements[d]['Portrait/Headshot Link'])
+            }
+          }
           data.home.elements[0]["Hero Image"] = that.driveURLConvert(data.home.elements[0]["Hero Image"])
           that.setState({data})
       },
