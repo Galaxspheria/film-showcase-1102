@@ -10,6 +10,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Decade from './components/Decade';
 import Author from './components/Author';
+import Movie from './components/Movie';
 
 class App extends Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class App extends Component {
                 <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
                 <Route path="/decade/" render={(props) => <Decade {...props} data={this.state.data} />} />
                 <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
+                <Route path="/movie/:id" render={(props) => <Movie {...props} data={this.state.data} />} />
                 <Footer/>
               </div>
             :<div className="loader-parent"><div className="loader"></div></div>}
