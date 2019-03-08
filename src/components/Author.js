@@ -15,7 +15,7 @@ class Author extends Component {
           <div>
           <div className='author-data'>
             <div className='author-image'>
-              <img id = 'image-auth'src={author['Portrait/Headshot Link']}/>
+              <img className="author" id = 'image-auth'src={author['Portrait/Headshot Link']}/>
             </div>
             <div className='author-detail'>
               <p id='name-author'>
@@ -39,17 +39,17 @@ class Author extends Component {
           <div className='adapted-works'>
             <p className='direct-head' style={{textAlign: 'center'}}>Adapted Works</p>
             <div className='adapted'>
-              <img src={author['Portrait/Headshot Link']} alt="Picture"></img>
+              <img className="author" src={author['Portrait/Headshot Link']} alt="Picture"></img>
               <p>Movie Name: {author['Adapted Work 1 Name']}</p>
               <p>Author's Role: {author['Role in Adapted Work 1']}</p>
             </div>
             <div className='adapted'>
-              <img src={author['Portrait/Headshot Link']} alt="Picture"></img>
+              <img className="author" src={author['Portrait/Headshot Link']} alt="Picture"></img>
               <p>Movie Name: {author['Adapted Work 2 Name']}</p>
               <p>Author's Role: {author['Role in Adapted Work 2']}</p>
             </div>
             <div className='adapted'>
-              <img src={author['Portrait/Headshot Link']} alt="Picture"></img>
+              <img className="author" src={author['Portrait/Headshot Link']} alt="Picture"></img>
               <p>Movie Name: {author['Adapted Work 3 Name']}</p>
               <p>Author's Role: {author['Role in Adapted Work 3']}</p>
             </div>

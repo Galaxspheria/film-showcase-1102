@@ -1,14 +1,5 @@
-body {
-  font-family: arial;
-  font-size: 15px;
-  color: green;
-}
 .direct-head {
   font-size: 35px;
-}
-
-p {
-  font-size: 25px;
 }
 
 .name-author {
@@ -31,7 +22,7 @@ p {
   display: inline-block;
 }
 
-img {
+img.author {
   height: 200px;
   width: auto;
   display: block;

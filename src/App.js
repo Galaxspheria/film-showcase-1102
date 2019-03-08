@@ -4,6 +4,8 @@ import Tabletop from 'tabletop';
 
 import './styles/App.scss';
 
+import ScrollToTop from './components/ScrollToTop';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -58,18 +60,20 @@ class App extends Component {
     return (
         <div className="App">
           <Router>
-            {this.state.data?
-              <div>
-                <Header/>
-                <Route path="/" exact render={(props) => <Home {...props} data={this.state.data} />} />
-                <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
-                <Route path="/authors/" render={(props) => <AuthorList {...props} data={this.state.data} />} />
-                <Route path="/decade/:id" render={(props) => <Decade {...props} data={this.state.data} />} />
-                <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
-                <Route path="/movie/:id" render={(props) => <Movie {...props} data={this.state.data} />} />
-                <Footer/>
-              </div>
-            :<div className="loader-parent"><div className="loader"></div></div>}
+            <ScrollToTop>
+              {this.state.data?
+                <div>
+                  <Header/>
+                  <Route path="/" exact render={(props) => <Home {...props} data={this.state.data} />} />
+                  <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
+                  <Route path="/authors/" render={(props) => <AuthorList {...props} data={this.state.data} />} />
+                  <Route path="/decade/:id" render={(props) => <Decade {...props} data={this.state.data} />} />
+                  <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
+                  <Route path="/movie/:id" render={(props) => <Movie {...props} data={this.state.data} />} />
+                  <Footer/>
+                </div>
+              :<div className="loader-parent"><div className="loader"></div></div>}
+            </ScrollToTop>
           </Router>
         </div>
     );
