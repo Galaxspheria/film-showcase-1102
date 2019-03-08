@@ -297,3 +297,17 @@ body {
         }
     }
 }
+
+.back-button {
+    color: white;
+    opacity: .7;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 2rem;
+    
+    &:hover {
+        opacity: 1;
+        color: white;
+    }
+}
