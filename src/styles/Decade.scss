@@ -311,3 +311,56 @@ body {
         color: white;
     }
 }
+
+.timeline-wrapper {
+    width: 100%;
+    color: white;
+}
+
+.timeline-text,
+.timeline-image {
+    width: calc(50% - 1rem);
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 2rem;
+}
+
+.timeline-image > img {
+    height: 15rem;
+}
+
+.timeline-card {
+    display: flex;
+    width: 100%;
+    
+    &.even {
+        > .timeline-text {
+            text-align: right;
+        }
+    }
+    
+    &.odd {
+        flex-direction: row-reverse;
+        > .timeline-image {
+            text-align: right;
+        }
+    }
+}
+
+.timeline-line {
+    width: 1rem;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    border-right: 1px solid white;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-node {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: #031625;
+    flex-shrink: 0;
+}

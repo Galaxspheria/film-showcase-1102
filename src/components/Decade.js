@@ -41,14 +41,22 @@ class Decade extends Component {
         <div className="timeline-wrapper">
           {this.state.films?
             this.state.films.map((f, i) => (
-              <div className={"timeline-card " + (i % 2 === 0)? "even" : "odd"} key={i}>
-                {f.Film}
-                <img src={this.state.films["Image 1"]}/>
+              <div className={"timeline-card " + ((i % 2 === 0)? "even" : "odd")} key={i}>
+                <div className="timeline-text">
+                  <h4>{f.Film}</h4>
+                  <h5>{f.Year}</h5>
+                </div>
+                <div className="timeline-line">
+                  <div className="timeline-node"></div>
+                </div>
+                <div className="timeline-image">
+                  <img src={f["Image 1"]? f["Image 1"] : "https://via.placeholder.com/300"}/>
+                </div>
               </div>
             ))
           :null}
         </div>
-        <section id="timeline">
+        {/* <section id="timeline">
             <div className="demo-card-wrapper">
                 {this.props.data.film.elements.map((d, i) => (
                     <div key={i} className={"demo-card demo-card--step"+i}>
@@ -67,7 +75,7 @@ class Decade extends Component {
                     </div>
                 ))}
             </div>
-        </section>
+        </section> */}
       </div>
     );
   }
