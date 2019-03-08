@@ -16,9 +16,7 @@ class Movie extends Component {
               <div className="container-fluid bg-light">
                 <div className="row">
                   <div className="col-sm">
-                    {console.log("here")}
-                    {console.log(filmSheet)}
-                    <img class="rounded mx-auto d-block" src={filmSheet[this.state.id]["Image 1"]} alt=""></img>
+                    <img className="rounded mx-auto d-block" src={filmSheet[this.state.id]["Image 1"]} alt=""></img>
                   </div>
                   <div className="col-md">
                     <div className = "row">
@@ -37,7 +35,7 @@ class Movie extends Component {
                       <h4>Original Work: {filmSheet[this.state.id]["Original Work"]}</h4>
                     </div>
                     <div className = "row">
-                      <Link to="/author/1"><button type="button" className="btn btn-info">Novelist Page</button></Link>
+                      {filmSheet[this.state.id].AuthorID? <Link to={"/author/" + filmSheet[this.state.id].AuthorID}><button type="button" className="btn btn-info">Novelist Page</button></Link> :null}
                     </div>
                   </div>
                 </div>

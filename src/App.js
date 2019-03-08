@@ -32,6 +32,13 @@ class App extends Component {
             if (data.film.elements[d]["Image 1"]) {
               data.film.elements[d]["Image 1"] = that.driveURLConvert(data.film.elements[d]["Image 1"])
             }
+            if (data.film.elements[d]["Original Author"]) {
+              for (var a in data.author.elements) {
+                if (data.author.elements[a].Author == data.film.elements[d]["Original Author"]) {
+                  data.film.elements[d].AuthorID = a
+                }
+              }
+            }
           }
           for (d in data.decade.elements) {
             if (data.decade.elements[d].Image) {
