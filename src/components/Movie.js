@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Movie extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class Movie extends Component {
                       <h4>Original Work: {filmSheet[this.state.id]["Original Work"]}</h4>
                     </div>
                     <div className = "row">
-                      <button type="button" class="btn btn-info">Novelist Page</button>
+                      <Link to="/author/1"><button type="button" className="btn btn-info">Novelist Page</button></Link>
                     </div>
                   </div>
                 </div>
