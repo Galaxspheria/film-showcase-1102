@@ -63,12 +63,8 @@ class App extends Component {
                 <Header/>
                 <Route path="/" exact render={(props) => <Home {...props} data={this.state.data} />} />
                 <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
-<<<<<<< HEAD
                 <Route path="/authors/" render={(props) => <AuthorList {...props} data={this.state.data} />} />
-                <Route path="/decade/" render={(props) => <Decade {...props} data={this.state.data} />} />
-=======
                 <Route path="/decade/:id" render={(props) => <Decade {...props} data={this.state.data} />} />
->>>>>>> 57604c54fb8309c75bf10418882708abd20c27d1
                 <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
                 <Route path="/movie/:id" render={(props) => <Movie {...props} data={this.state.data} />} />
                 <Footer/>
