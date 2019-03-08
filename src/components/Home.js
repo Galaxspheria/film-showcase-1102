@@ -12,6 +12,7 @@ class Home extends Component {
           {this.props.data.home.elements[0]["Intro Blurb"].split("\n").map((p, i) =>
             <p key={i}>{p}</p>
           )}
+          <h1><i className="fas fa-angle-down"></i></h1>
           <div className="hero-img" style={{backgroundImage: "url(" + this.props.data.home.elements[0]["Hero Image"] + ")"}}></div>
         </div>
         <section id="decade-timeline">
