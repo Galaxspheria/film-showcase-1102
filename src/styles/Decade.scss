@@ -325,6 +325,12 @@ body {
     padding: 2rem;
 }
 
+.timeline-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .timeline-image > img {
     height: 15rem;
 }
