@@ -27,8 +27,19 @@ class App extends Component {
     Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/14i0nvudUdYZkTer6euXjCnceQKkxGRq5dStdpHlPUn4/edit?usp=sharing',
       callback: function(data) {
           for (var d in data.film.elements) {
-            if (data.film.elements[d].Image) {
-              data.film.elements[d].Image = that.driveURLConvert(data.film.elements[d].Image)
+            if (data.film.elements[d]["Image 1"]) {
+              data.film.elements[d]["Image 1"] = that.driveURLConvert(data.film.elements[d]["Image 1"])
+            }
+          }
+          for (d in data.decade.elements) {
+            if (data.decade.elements[d].Image) {
+              data.decade.elements[d].Image = that.driveURLConvert(data.decade.elements[d].Image)
+            }
+          }
+          for (d in data.author.elements) {
+            console.log(data.author.elements[d])
+            if (data.author.elements[d]['Portrait/Headshot Link']) {
+              data.author.elements[d]['Portrait/Headshot Link'] = that.driveURLConvert(data.author.elements[d]['Portrait/Headshot Link'])
             }
           }
           data.home.elements[0]["Hero Image"] = that.driveURLConvert(data.home.elements[0]["Hero Image"])
@@ -38,7 +49,9 @@ class App extends Component {
   }
 
   driveURLConvert(url) {
+    if(url && url.length > 65) {
     return "https://docs.google.com/uc?id=" + url.substring(32, 65)
+    }
   }
 
   render() {
@@ -50,8 +63,12 @@ class App extends Component {
                 <Header/>
                 <Route path="/" exact render={(props) => <Home {...props} data={this.state.data} />} />
                 <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
+<<<<<<< HEAD
                 <Route path="/authors/" render={(props) => <AuthorList {...props} data={this.state.data} />} />
                 <Route path="/decade/" render={(props) => <Decade {...props} data={this.state.data} />} />
+=======
+                <Route path="/decade/:id" render={(props) => <Decade {...props} data={this.state.data} />} />
+>>>>>>> 57604c54fb8309c75bf10418882708abd20c27d1
                 <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
                 <Route path="/movie/:id" render={(props) => <Movie {...props} data={this.state.data} />} />
                 <Footer/>

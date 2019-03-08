@@ -1,10 +1,53 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Decade.scss'
 
 class Decade extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      id: this.props.match.params.id
+    }
+  }
+
+  componentDidMount() {
+    var low = parseInt(this.props.data.decade.elements[this.state.id]["Start Year"], 10)
+    var high = parseInt(this.props.data.decade.elements[this.state.id]["Stop Year"], 10)
+    var films = []
+    for (var film in this.props.data.film.elements) {
+      if (low < parseInt(this.props.data.film.elements[film].Year, 10) && parseInt(this.props.data.film.elements[film].Year, 10) < high) {
+        films.push(this.props.data.film.elements[film])
+      }
+    }
+    this.setState({films})
+  }
+
   render() {
+    const decade = this.props.data.decade.elements[this.state.id]
     return (
       <div className="Decade page-fade">
+        <div className="intro-blurb decade-blurb">
+          <Link className="back-button" to="/"><i className="fas fa-arrow-left"></i></Link>
+          <h1>{decade.Name}</h1>
+          <h3 style={{textTransform: "uppercase"}}>{decade.Era}</h3>
+          <div className="hero-img" style={{backgroundImage: "url(" + decade.Image + ")"}}></div>
+        </div>
+        <div className = "intro-blurb">
+          <h2>Era Summary</h2>
+          {decade.Summary.split("\n").map((p, i) =>
+            <p key={i}>{p}</p>
+          )}
+        </div>
+        <div className="timeline-wrapper">
+          {this.state.films?
+            this.state.films.map((f, i) => (
+              <div className={"timeline-card " + (i % 2 === 0)? "even" : "odd"} key={i}>
+                {f.Film}
+                <img src={this.state.films["Image 1"]}/>
+              </div>
+            ))
+          :null}
+        </div>
         <section id="timeline">
             <div className="demo-card-wrapper">
                 {this.props.data.film.elements.map((d, i) => (
