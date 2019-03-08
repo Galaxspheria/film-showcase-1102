@@ -26,8 +26,8 @@ class App extends Component {
     Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/14i0nvudUdYZkTer6euXjCnceQKkxGRq5dStdpHlPUn4/edit?usp=sharing',
       callback: function(data) {
           for (var d in data.film.elements) {
-            if (data.film.elements[d].Image) {
-              data.film.elements[d].Image = that.driveURLConvert(data.film.elements[d].Image)
+            if (data.film.elements[d]["Image 1"]) {
+              data.film.elements[d]["Image 1"] = that.driveURLConvert(data.film.elements[d]["Image 1"])
             }
           }
           for (d in data.decade.elements) {
@@ -42,7 +42,9 @@ class App extends Component {
   }
 
   driveURLConvert(url) {
+    if(url && url.length > 65) {
     return "https://docs.google.com/uc?id=" + url.substring(32, 65)
+    }
   }
 
   render() {
