@@ -26,9 +26,10 @@ class App extends Component {
       callback: function(data) {
           for (var d in data.film.elements) {
             if (data.film.elements[d].Image) {
-              data.film.elements[d].Image = that.driveURLConvert(data.film.elements[d].Image);
+              data.film.elements[d].Image = that.driveURLConvert(data.film.elements[d].Image)
             }
           }
+          data.home.elements[0]["Hero Image"] = that.driveURLConvert(data.home.elements[0]["Hero Image"])
           that.setState({data})
       },
       simpleSheet: false } )

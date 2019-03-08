@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Timeline.scss';
+import '../styles/Home.scss';
 
 class Home extends Component {
   render() {
     return (
       <div className="Home page-fade">
-        <header className="App-header">
-          Intro Info
-        </header>
+        <div className="intro-blurb">
+          <h2>{this.props.data.home.elements[0]["Site Name"]}</h2>
+          {this.props.data.home.elements[0]["Intro Blurb"].split("\n").map((p, i) =>
+            <p key={i}>{p}</p>
+          )}
+          <div className="hero-img" style={{backgroundImage: "url(" + this.props.data.home.elements[0]["Hero Image"] + ")"}}></div>
+        </div>
         <section id="decade-timeline">
             <Link className="tl-item" to="/decade/1">
                 
