@@ -30,6 +30,11 @@ class App extends Component {
               data.film.elements[d].Image = that.driveURLConvert(data.film.elements[d].Image)
             }
           }
+          for (var d in data.decade.elements) {
+            if (data.decade.elements[d].Image) {
+              data.decade.elements[d].Image = that.driveURLConvert(data.decade.elements[d].Image)
+            }
+          }
           data.home.elements[0]["Hero Image"] = that.driveURLConvert(data.home.elements[0]["Hero Image"])
           that.setState({data})
       },
