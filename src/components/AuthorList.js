@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Decade.scss'
 
 class AuthorList extends Component {
@@ -6,7 +7,7 @@ class AuthorList extends Component {
         return (
             <section>
                 {this.props.data.author.elements.map((d, i) => (
-                    <div key={i} className="container py-3">
+                    <Link to={"/author/"+i} key={i} className="nolink container py-3">
                         <div className="card">
                             <div className="row">
                                 <div className="col-md-4">
@@ -28,7 +29,7 @@ class AuthorList extends Component {
                                     </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </section>
         );
