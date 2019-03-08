@@ -11,11 +11,12 @@ import About from './components/About';
 import Decade from './components/Decade';
 import Author from './components/Author';
 import Movie from './components/Movie';
+import AuthorList from './components/AuthorList';
 
 class App extends Component {
   constructor(props) {
     super(props)
-    
+
     this.state = {
       data: null
     }
@@ -33,6 +34,12 @@ class App extends Component {
           for (d in data.decade.elements) {
             if (data.decade.elements[d].Image) {
               data.decade.elements[d].Image = that.driveURLConvert(data.decade.elements[d].Image)
+            }
+          }
+          for (d in data.author.elements) {
+            console.log(data.author.elements[d])
+            if (data.author.elements[d]['Portrait/Headshot Link']) {
+              data.author.elements[d]['Portrait/Headshot Link'] = that.driveURLConvert(data.author.elements[d]['Portrait/Headshot Link'])
             }
           }
           data.home.elements[0]["Hero Image"] = that.driveURLConvert(data.home.elements[0]["Hero Image"])
@@ -56,6 +63,7 @@ class App extends Component {
                 <Header/>
                 <Route path="/" exact render={(props) => <Home {...props} data={this.state.data} />} />
                 <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
+                <Route path="/authors/" render={(props) => <AuthorList {...props} data={this.state.data} />} />
                 <Route path="/decade/:id" render={(props) => <Decade {...props} data={this.state.data} />} />
                 <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
                 <Route path="/movie/:id" render={(props) => <Movie {...props} data={this.state.data} />} />
