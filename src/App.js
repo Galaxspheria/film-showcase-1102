@@ -11,11 +11,12 @@ import About from './components/About';
 import Decade from './components/Decade';
 import Author from './components/Author';
 import Movie from './components/Movie';
+import AuthorList from './components/AuthorList';
 
 class App extends Component {
   constructor(props) {
     super(props)
-    
+
     this.state = {
       data: null
     }
@@ -49,6 +50,7 @@ class App extends Component {
                 <Header/>
                 <Route path="/" exact render={(props) => <Home {...props} data={this.state.data} />} />
                 <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
+                <Route path="/authors/" render={(props) => <AuthorList {...props} data={this.state.data} />} />
                 <Route path="/decade/" render={(props) => <Decade {...props} data={this.state.data} />} />
                 <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
                 <Route path="/movie/:id" render={(props) => <Movie {...props} data={this.state.data} />} />
