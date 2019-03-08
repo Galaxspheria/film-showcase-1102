@@ -30,6 +30,11 @@ class App extends Component {
               data.film.elements[d]["Image 1"] = that.driveURLConvert(data.film.elements[d]["Image 1"])
             }
           }
+          for (d in data.decade.elements) {
+            if (data.decade.elements[d].Image) {
+              data.decade.elements[d].Image = that.driveURLConvert(data.decade.elements[d].Image)
+            }
+          }
           data.home.elements[0]["Hero Image"] = that.driveURLConvert(data.home.elements[0]["Hero Image"])
           that.setState({data})
       },
@@ -51,7 +56,7 @@ class App extends Component {
                 <Header/>
                 <Route path="/" exact render={(props) => <Home {...props} data={this.state.data} />} />
                 <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
-                <Route path="/decade/" render={(props) => <Decade {...props} data={this.state.data} />} />
+                <Route path="/decade/:id" render={(props) => <Decade {...props} data={this.state.data} />} />
                 <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
                 <Route path="/movie/:id" render={(props) => <Movie {...props} data={this.state.data} />} />
                 <Footer/>

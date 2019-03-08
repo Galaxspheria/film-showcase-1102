@@ -1,10 +1,31 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Decade.scss'
 
 class Decade extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      id: this.props.match.params.id
+    }
+  }
+
   render() {
+    const decade = this.props.data.decade.elements[this.state.id]
     return (
       <div className="Decade page-fade">
+        <div className="intro-blurb decade-blurb">
+          <Link className="back-button" to="/"><i className="fas fa-arrow-left"></i></Link>
+          <h1>{decade.Name}</h1>
+          <h3 style={{textTransform: "uppercase"}}>{decade.Era}</h3>
+          <div className="hero-img" style={{backgroundImage: "url(" + decade.Image + ")"}}></div>
+        </div>
+        <div className = "intro-blurb">
+          <h2>Era Summary</h2>
+          {decade.Summary.split("\n").map((p, i) =>
+            <p key={i}>{p}</p>
+          )}
+        </div>
         <section id="timeline">
             <div className="demo-card-wrapper">
                 {this.props.data.film.elements.map((d, i) => (
