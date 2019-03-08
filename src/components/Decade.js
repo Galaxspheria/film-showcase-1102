@@ -16,7 +16,7 @@ class Decade extends Component {
     var films = []
     for (var film in this.props.data.film.elements) {
       if (low < parseInt(this.props.data.film.elements[film].Year, 10) && parseInt(this.props.data.film.elements[film].Year, 10) < high) {
-        films.push(this.props.data.film.elements[film])
+        films.push({...this.props.data.film.elements[film], id: film})
       }
     }
     this.setState({films})
@@ -41,7 +41,7 @@ class Decade extends Component {
         <div className="timeline-wrapper">
           {this.state.films?
             this.state.films.map((f, i) => (
-              <div className={"timeline-card " + ((i % 2 === 0)? "even" : "odd")} key={i}>
+              <Link to={"/movie/"+f.id} className={"timeline-card " + ((i % 2 === 0)? "even" : "odd")} key={i}>
                 <div className="timeline-text">
                   <h4>{f.Film}</h4>
                   <h5>{f.Year}</h5>
@@ -52,7 +52,7 @@ class Decade extends Component {
                 <div className="timeline-image">
                   <img src={f["Image 1"]? f["Image 1"] : "https://via.placeholder.com/300"}/>
                 </div>
-              </div>
+              </Link>
             ))
           :null}
         </div>

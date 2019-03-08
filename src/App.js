@@ -39,7 +39,6 @@ class App extends Component {
             }
           }
           for (d in data.author.elements) {
-            console.log(data.author.elements[d])
             if (data.author.elements[d]['Portrait/Headshot Link']) {
               data.author.elements[d]['Portrait/Headshot Link'] = that.driveURLConvert(data.author.elements[d]['Portrait/Headshot Link'])
             }
