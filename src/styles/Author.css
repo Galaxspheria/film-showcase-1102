@@ -1,0 +1,58 @@
+body {
+  font-family: arial;
+  font-size: 15px;
+  color: green;
+}
+.direct-head {
+  font-size: 35px;
+}
+
+p {
+  font-size: 25px;
+}
+
+.name-author {
+  font-size: 35px;
+}
+.author-subdata {
+  font-size: 20px;
+}
+.author-data {
+  display: flex;
+}
+.author-detail {
+  margin: 20px;
+
+}
+
+.author-image {
+  margin: 20px;
+  float: left;
+  display: inline-block;
+}
+
+img {
+  height: 200px;
+  width: auto;
+  display: block;
+}
+
+.adapted-works {
+  margin: 20px;
+  width: auto;
+  height: auto;
+  border: 5px solid red;
+  background-color: #D8D8D8;
+}
+
+.adapted {
+  display: inline-block;
+  width: 25%;
+  margin: 20px;
+  padding: 20px;
+}
+
+.impact-sect {
+  margin: 20px;
+  padding: 20px;
+}

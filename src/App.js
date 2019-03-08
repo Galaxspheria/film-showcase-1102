@@ -14,7 +14,7 @@ import Author from './components/Author';
 class App extends Component {
   constructor(props) {
     super(props)
-    
+
     this.state = {
       data: null
     }
