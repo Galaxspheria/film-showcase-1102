@@ -49,6 +49,15 @@ class App extends Component {
             if (data.author.elements[d]['Portrait/Headshot Link']) {
               data.author.elements[d]['Portrait/Headshot Link'] = that.driveURLConvert(data.author.elements[d]['Portrait/Headshot Link'])
             }
+            if (data.author.elements[d]['Adapted Work 1 Image']) {
+              data.author.elements[d]['Adapted Work 1 Image'] = that.driveURLConvert(data.author.elements[d]['Adapted Work 1 Image'])
+            }
+            if (data.author.elements[d]['Adapted Work 2 Image']) {
+              data.author.elements[d]['Adapted Work 2 Image'] = that.driveURLConvert(data.author.elements[d]['Adapted Work 2 Image'])
+            }
+            if (data.author.elements[d]['Adapted Work 3 Image']) {
+              data.author.elements[d]['Adapted Work 3 Image'] = that.driveURLConvert(data.author.elements[d]['Adapted Work 3 Image'])
+            }
           }
           data.home.elements[0]["Hero Image"] = that.driveURLConvert(data.home.elements[0]["Hero Image"])
           that.setState({data})

@@ -36,7 +36,7 @@ class Movie extends Component {
                     </div>
                     <div className = "row">
                       {filmSheet[this.state.id].AuthorID? <Link to={"/author/" + filmSheet[this.state.id].AuthorID}><button type="button" className="btn btn-info">Novelist Page</button></Link> :null}
-                      {filmSheet[this.state.id]["Watch Link"]? <a href={filmSheet[this.state.id]["Watch Link"]}><button type="button" className="btn btn-warning">Watch Now</button></a> :null}
+                      {filmSheet[this.state.id]["Watch Link"]? <a target="_blank" rel="noopener noreferrer" href={filmSheet[this.state.id]["Watch Link"]}><button type="button" className="btn btn-warning">Watch Now</button></a> :null}
                     </div>
                   </div>
                 </div>
