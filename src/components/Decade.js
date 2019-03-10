@@ -15,7 +15,7 @@ class Decade extends Component {
     var high = parseInt(this.props.data.decade.elements[this.state.id]["Stop Year"], 10)
     var films = []
     for (var film in this.props.data.film.elements) {
-      if (low < parseInt(this.props.data.film.elements[film].Year, 10) && parseInt(this.props.data.film.elements[film].Year, 10) < high) {
+      if (low <= parseInt(this.props.data.film.elements[film].Year, 10) && parseInt(this.props.data.film.elements[film].Year, 10) <= high) {
         films.push({...this.props.data.film.elements[film], id: film})
       }
     }
