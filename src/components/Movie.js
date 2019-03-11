@@ -42,6 +42,14 @@ class Movie extends Component {
                 </div>
               </div>
 
+<<<<<<< HEAD
+              <div className="container-fluid bg-light">
+                <div className="row">
+                  <h3 className="text-center" style={{margin: "auto"}}>Movie Description</h3>
+                </div>
+                <div className="row">
+                  <p>{filmSheet[this.state.id]["Description"]}</p>
+=======
               {filmSheet[this.state.id]["Description"]?
                 <div className="container-fluid bg-light">
                   <div className="row">
@@ -52,9 +60,15 @@ class Movie extends Component {
                         <p key={i}>{p}</p>
                     )}
                   </div>
+>>>>>>> 57b0dc076400db930597afeac89426bf266da4ff
                 </div>
               :null}
 
+<<<<<<< HEAD
+              <div className="container-fluid bg-light">
+                <div className="row">
+                  <h3 className="text-center" style={{margin: "auto"}}>Movie Impact</h3>
+=======
               {filmSheet[this.state.id]["Impact"]? 
                 <div className="container-fluid bg-light">
                   <div className="row">
@@ -65,6 +79,7 @@ class Movie extends Component {
                       <p key={i}>{p}</p>
                     )}
                   </div>
+>>>>>>> 57b0dc076400db930597afeac89426bf266da4ff
                 </div>
               :null}
 
