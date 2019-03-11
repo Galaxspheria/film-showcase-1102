@@ -105,5 +105,23 @@
 }
 
 .decade-blurb {
-    min-height: 60vh;
+    min-height: 50vh;
+}
+
+.decade-content {
+    border-top: 5vh solid transparentize($color: $primary, $amount: 0.5);
+    margin-top: -5vh;
+}
+
+.decade-green-content {
+    background-color: $primary;
+    padding-bottom: 0;
+}
+
+.timeline-name {
+    color: $primary-light;
+}
+
+.timeline-year {
+    font-family: $font-body;
 }

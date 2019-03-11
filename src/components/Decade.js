@@ -32,40 +32,51 @@ class Decade extends Component {
           <h3 style={{textTransform: "uppercase"}}>{decade.Era}</h3>
           <div className="hero-img" style={{backgroundImage: "url(" + decade.Image + ")"}}></div>
         </div>
-        <div className = "intro-blurb">
-          <h2>Era Summary</h2>
-          {decade.Summary.split("\n").map((p, i) =>
-            <p key={i}>{p}</p>
-          )}
-        </div>
-        <div className="timeline-wrapper">
-          {this.state.films?
-            this.state.films.map((f, i) => (
-              <Link to={"/movie/"+f.id} className={"timeline-card " + ((i % 2 === 0)? "even" : "odd")} key={i}>
-                <div className="timeline-text">
-                  <h4>{f.Film}</h4>
-                  <h5>{f.Year}</h5>
-                </div>
-                <div className="timeline-line-l"/>
-                <div className="timeline-line">
-                  <div className="timeline-node"></div>
-                </div>
-                <div className="timeline-line-r"/>
-                <div className="timeline-image">
-                  <img src={f["Image 1"]? f["Image 1"] : "https://via.placeholder.com/300"}/>
-                </div>
-              </Link>
-            ))
-          :null}
-        </div>
-        {decade["Works Cited"]?
-          <div className = "intro-blurb">
-            <h4>Works Cited</h4>
-            {decade['Works Cited'].split("\n").map((p, i) =>
+        <div className="decade-content">
+          <div className="intro-blurb decade-green-content">
+            <h2>Era Summary</h2>
+            {decade.Summary.split("\n").map((p, i) =>
               <p key={i}>{p}</p>
             )}
+            <div className="timeline-card even">
+              <div className="timeline-text">
+              </div>
+              <div className="timeline-line-l"/>
+              <div className="timeline-line"/>
+              <div className="timeline-line-r"/>
+              <div className="timeline-image">
+              </div>
+            </div>
           </div>
-        :null}
+          <div className="timeline-wrapper">
+            {this.state.films?
+              this.state.films.map((f, i) => (
+                <Link to={"/movie/"+f.id} className={"timeline-card " + ((i % 2 === 0)? "even" : "odd")} key={i}>
+                  <div className="timeline-text">
+                    <h4 className="timeline-name">{f.Film}</h4>
+                    <h3 className="timeline-year">{f.Year}</h3>
+                  </div>
+                  <div className="timeline-line-l"/>
+                  <div className="timeline-line">
+                    <div className="timeline-node"></div>
+                  </div>
+                  <div className="timeline-line-r"/>
+                  <div className="timeline-image">
+                    <img src={f["Image 1"]? f["Image 1"] : "https://via.placeholder.com/300"}/>
+                  </div>
+                </Link>
+              ))
+            :null}
+          </div>
+          {decade["Works Cited"]?
+            <div className = "intro-blurb">
+              <h4>Works Cited</h4>
+              {decade['Works Cited'].split("\n").map((p, i) =>
+                <p key={i}>{p}</p>
+              )}
+            </div>
+          :null}
+        </div>
       </div>
     );
   }
