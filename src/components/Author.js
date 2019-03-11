@@ -44,16 +44,20 @@ class Author extends Component {
                     <p>Movie Name: {author['Adapted Work 1 Name']}</p>
                     <p>Author's Role: {author['Role in Adapted Work 1']}</p>
                 </div>
-                <div className='adapted'>
-                    <img className="author" src={author['Adapted Work 2 Image']} alt="Picture"></img>
-                    <p>Movie Name: {author['Adapted Work 2 Name']}</p>
-                    <p>Author's Role: {author['Role in Adapted Work 2']}</p>
-                </div>
-                <div className='adapted'>
-                    <img className="author" src={author['Adapted Work 3 Image']} alt="Picture"></img>
-                    <p>Movie Name: {author['Adapted Work 3 Name']}</p>
-                    <p>Author's Role: {author['Role in Adapted Work 3']}</p>
-            </div>
+                {author['Adapted Work 2 Name']?
+                    <div className='adapted'>
+                        <img className="author" src={author['Adapted Work 2 Image']} alt="Picture"></img>
+                        <p>Movie Name: {author['Adapted Work 2 Name']}</p>
+                        <p>Author's Role: {author['Role in Adapted Work 2']}</p>
+                    </div>
+                :null}
+                {author['Adapted Work 3 Name']?
+                    <div className='adapted'>
+                        <img className="author" src={author['Adapted Work 3 Image']} alt="Picture"></img>
+                        <p>Movie Name: {author['Adapted Work 3 Name']}</p>
+                        <p>Author's Role: {author['Role in Adapted Work 3']}</p>
+                    </div>
+                :null}
             </div>
 
             {author["Impact"]?
