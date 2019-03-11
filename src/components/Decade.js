@@ -10,6 +10,18 @@ class Decade extends Component {
     }
   }
 
+  componentDidMount() {
+    var low = parseInt(this.props.data.decade.elements[this.state.id]["Start Year"], 10)
+    var high = parseInt(this.props.data.decade.elements[this.state.id]["Stop Year"], 10)
+    var films = []
+    for (var film in this.props.data.film.elements) {
+      if (low <= parseInt(this.props.data.film.elements[film].Year, 10) && parseInt(this.props.data.film.elements[film].Year, 10) <= high) {
+        films.push({...this.props.data.film.elements[film], id: film})
+      }
+    }
+    this.setState({films})
+  }
+
   render() {
     const decade = this.props.data.decade.elements[this.state.id]
     return (
@@ -26,7 +38,25 @@ class Decade extends Component {
             <p key={i}>{p}</p>
           )}
         </div>
-        <section id="timeline">
+        <div className="timeline-wrapper">
+          {this.state.films?
+            this.state.films.map((f, i) => (
+              <Link to={"/movie/"+f.id} className={"timeline-card " + ((i % 2 === 0)? "even" : "odd")} key={i}>
+                <div className="timeline-text">
+                  <h4>{f.Film}</h4>
+                  <h5>{f.Year}</h5>
+                </div>
+                <div className="timeline-line">
+                  <div className="timeline-node"></div>
+                </div>
+                <div className="timeline-image">
+                  <img src={f["Image 1"]? f["Image 1"] : "https://via.placeholder.com/300"}/>
+                </div>
+              </Link>
+            ))
+          :null}
+        </div>
+        {/* <section id="timeline">
             <div className="demo-card-wrapper">
                 {this.props.data.film.elements.map((d, i) => (
                     <div key={i} className={"demo-card demo-card--step"+i}>
@@ -45,7 +75,7 @@ class Decade extends Component {
                     </div>
                 ))}
             </div>
-        </section>
+        </section> */}
       </div>
     );
   }

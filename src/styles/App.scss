@@ -72,3 +72,13 @@
   justify-content: center;
   height: 100vh;
 }
+
+.nolink {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
