@@ -46,9 +46,11 @@ class Decade extends Component {
                   <h4>{f.Film}</h4>
                   <h5>{f.Year}</h5>
                 </div>
+                <div className="timeline-line-l"/>
                 <div className="timeline-line">
                   <div className="timeline-node"></div>
                 </div>
+                <div className="timeline-line-r"/>
                 <div className="timeline-image">
                   <img src={f["Image 1"]? f["Image 1"] : "https://via.placeholder.com/300"}/>
                 </div>
