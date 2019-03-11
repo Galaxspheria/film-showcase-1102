@@ -1,0 +1,18 @@
+@import './Theme.scss';
+
+.theme-dark {
+    background-color: $black
+}
+
+.theme-primary {
+    background-color: $test
+}
+
+.text-light {
+    color: $white
+}
+
+.text-block {
+    padding-left: 400px;
+    padding-right: 400px
+}
