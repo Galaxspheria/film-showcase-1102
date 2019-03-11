@@ -13,7 +13,7 @@ class Movie extends Component {
         const filmSheet = this.props.data.film.elements
         return (
             <div className="Movie page-fade">
-              <div className="container-fluid bg-light">
+              <div className="container-fluid bg-light" style={{padding: 30}}>
                 <div className="row">
                   <div className="col-sm">
                     <img className="rounded mx-auto d-block" src={filmSheet[this.state.id]["Image 1"]} alt=""></img>
@@ -42,60 +42,48 @@ class Movie extends Component {
                 </div>
               </div>
 
-<<<<<<< HEAD
-              <div className="container-fluid bg-light">
-                <div className="row">
-                  <h3 className="text-center" style={{margin: "auto"}}>Movie Description</h3>
-                </div>
-                <div className="row">
-                  <p>{filmSheet[this.state.id]["Description"]}</p>
-=======
-              {filmSheet[this.state.id]["Description"]?
-                <div className="container-fluid bg-light">
-                  <div className="row">
-                    <h3 className="text-center">Movie Description</h3>
+              <div className="container-fluid bg-light intro-blurb">
+                {filmSheet[this.state.id]["Description"]?
+                  <div className="container-fluid bg-light">
+                    <div className="row">
+                      <h3 className="text-center" style={{margin: "auto"}}>Movie Description</h3>
+                    </div>
+                    <div className="row">
+                      {filmSheet[this.state.id]["Description"].split("\n").map((p, i) =>
+                          <p key={i}>{p}</p>
+                      )}
+                    </div>
                   </div>
-                  <div className="row">
-                    {filmSheet[this.state.id]["Description"].split("\n").map((p, i) =>
+                :null}
+
+                {filmSheet[this.state.id]["Impact"]? 
+                  <div className="container-fluid bg-light">
+                    <div className="row">
+                      <h3 className="text-center" style={{margin: "auto"}}>Movie Impact</h3>
+                    </div>
+                    <div className="row">
+                      {filmSheet[this.state.id]["Impact"].split("\n").map((p, i) =>
                         <p key={i}>{p}</p>
-                    )}
+                      )}
+                    </div>
                   </div>
->>>>>>> 57b0dc076400db930597afeac89426bf266da4ff
-                </div>
-              :null}
+                :null}
 
-<<<<<<< HEAD
-              <div className="container-fluid bg-light">
-                <div className="row">
-                  <h3 className="text-center" style={{margin: "auto"}}>Movie Impact</h3>
-=======
-              {filmSheet[this.state.id]["Impact"]? 
-                <div className="container-fluid bg-light">
-                  <div className="row">
-                    <h3 className="text-center">Movie Impact</h3>
+                {filmSheet[this.state.id]["Works Cited"]? 
+                  <div className="container-fluid bg-light">
+                    <div className="row">
+                      <h3 className="text-center">Works Cited</h3>
+                    </div>
+                    <div className="row">
+                      {filmSheet[this.state.id]["Works Cited"].split("\n").map((p, i) =>
+                        <p key={i}>{p}</p>
+                      )}
+                    </div>
                   </div>
-                  <div className="row">
-                    {filmSheet[this.state.id]["Impact"].split("\n").map((p, i) =>
-                      <p key={i}>{p}</p>
-                    )}
-                  </div>
->>>>>>> 57b0dc076400db930597afeac89426bf266da4ff
-                </div>
-              :null}
-
-              {filmSheet[this.state.id]["Works Cited"]? 
-                <div className="container-fluid bg-light">
-                  <div className="row">
-                    <h3 className="text-center">Works Cited</h3>
-                  </div>
-                  <div className="row">
-                    {filmSheet[this.state.id]["Works Cited"].split("\n").map((p, i) =>
-                      <p key={i}>{p}</p>
-                    )}
-                  </div>
-                </div>
-              :null}
-            </div>
+                :null}
+              </div>
+              </div>
+              
         );
     }
 }
