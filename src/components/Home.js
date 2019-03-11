@@ -8,7 +8,7 @@ class Home extends Component {
     return (
       <div className="Home page-fade">
         <div className="intro-blurb">
-          <h2>{this.props.data.home.elements[0]["Site Name"]}</h2>
+          <h1 className="page-title">{this.props.data.home.elements[0]["Site Name"]}</h1>
           {this.props.data.home.elements[0]["Intro Blurb"].split("\n").map((p, i) =>
             <p key={i}>{p}</p>
           )}
