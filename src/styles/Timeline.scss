@@ -83,7 +83,7 @@
     opacity: 0;
 
     h1 {
-        font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-family: $font-heading;
         text-transform: uppercase;
         color: $primary-light;
         font-size: 1.44rem;
@@ -103,7 +103,7 @@
     padding: 10px;
 
     p {
-        font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-family: $font-body;
         font-size: 1.728rem;
         line-height: 1em;
         margin: 10px;
