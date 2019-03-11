@@ -16,7 +16,7 @@ class Movie extends Component {
               <div className="container-fluid bg-light">
                 <div className="row">
                   <div className="col-sm">
-                    <img className="rounded mx-auto d-block" src={filmSheet[this.state.id]["Image 1"]} alt=""></img>
+                    <img className="rounded mx-auto d-block" style={{maxWidth: "100%", maxHeight: '100%'}} src={filmSheet[this.state.id]["Image 1"]} alt=""></img>
                   </div>
                   <div className="col-md">
                     <div className = "row">

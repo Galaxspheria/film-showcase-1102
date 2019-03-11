@@ -1,11 +1,12 @@
+@import './Theme.scss';
+
 .intro-blurb {
-    min-height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    color: white;
+    color: $white;
     margin: auto;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -31,8 +32,12 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background: transparentize(#031625, 0.15);
+        background: transparentize($black, 0.15);
         opacity: 1;
         z-index: -1;
     }
+}
+
+.scroll-down {
+    color: $primary-light;
 }
