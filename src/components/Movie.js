@@ -44,7 +44,7 @@ class Movie extends Component {
 
               <div className="container-fluid bg-light">
                 <div className="row">
-                  <h3 className="text-center">Movie Description</h3>
+                  <h3 className="text-center" style={{margin: "auto"}}>Movie Description</h3>
                 </div>
                 <div className="row">
                   <p>{filmSheet[this.state.id]["Description"]}</p>
@@ -53,7 +53,7 @@ class Movie extends Component {
 
               <div className="container-fluid bg-light">
                 <div className="row">
-                  <h3 className="text-center">Movie Impact</h3>
+                  <h3 className="text-center" style={{margin: "auto"}}>Movie Impact</h3>
                 </div>
                 <div className="row">
                   <p>{filmSheet[this.state.id]["Impact"]}</p>
