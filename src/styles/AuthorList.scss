@@ -1,0 +1,45 @@
+@import './Theme.scss';
+
+.author-list-parent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.author-list-item {
+    width: 33.3333%;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.author-list-image {
+    width: 10rem;
+    height: 10rem;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+}
+
+.author-list-img {
+    display: inline;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+}
+
+.author-list-content {
+    margin: auto;
+    text-align: center;
+    padding: 1rem;
+    padding-bottom: 2rem;
+}
+
+.author-list-author {
+    color: $primary-light
+}
+
+.author-list-years {
+    color: $white;
+}
