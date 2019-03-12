@@ -65,8 +65,8 @@ class Author extends Component {
                     {author['Adapted Work 3 Name']?
                         <div className='adapted'>
                             <img className="author" src={author['Adapted Work 3 Image']} alt="Picture"></img>
-                            <h4 className="text-light">{author['Adapted Work 2 Name']}</h4>
-                            <h5>as {author['Role in Adapted Work 2']}</h5>
+                            <h4 className="text-light">{author['Adapted Work 3 Name']}</h4>
+                            <h5>as {author['Role in Adapted Work 3']}</h5>
                         </div>
                     :null}
                     </div>
