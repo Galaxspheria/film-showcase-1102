@@ -12,7 +12,7 @@ class Author extends Component {
     render() {
       const author = this.props.data.author.elements[this.state.id]
         return (
-          <div style={{background: 'white'}}>
+          <div className="page-fade" style={{background: 'white'}}>
             <div className='author-data'>
             <div className='author-image'>
                 <img className="author" id = 'image-auth'src={author['Portrait/Headshot Link']}/>

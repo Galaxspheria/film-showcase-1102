@@ -5,7 +5,7 @@ import '../styles/AuthorList.scss'
 class AuthorList extends Component {
     render() {
         return (
-            <section>
+            <section className="AuthorList page-fade">
                 <h1>The Hidden Figures</h1>
                 <h2>Subtitle</h2>
                 <div className="author-list-parent">
