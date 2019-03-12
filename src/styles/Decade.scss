@@ -21,7 +21,7 @@
 
 .timeline-text,
 .timeline-image {
-    width: calc(50% - 1rem);
+    width: calc(50% - 1.5rem);
     flex-grow: 0;
     flex-shrink: 0;
     padding: 2rem;
@@ -42,13 +42,17 @@
     width: 100%;
     text-decoration: none;
     color: $white;
-    transition: ease-in-out 0.3s;
+    transition: linear 0.3s;
 
     &:hover {
         text-decoration: none;
         color: $white;
         // background-color: rgba(255, 255, 255, 0.1);
         transform: scale(1.05);
+
+        &> .timeline-line, &> .timeline-line-l, &> .timeline-line-r {
+            transform: scale(.95);
+        }
     }
     
     &.even {
@@ -68,15 +72,32 @@
 .timeline-line {
     width: 1rem;
     flex-shrink: 0;
-    margin-right: 1rem;
-    border-right: 1px solid $white;
+    border-right: 1.5rem dashed $white;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
     display: flex;
     align-items: center;
+    transition: linear 0.3s;
+}
+
+.timeline-line-l, .timeline-line-r {
+    width: 0.5rem;
+    flex-shrink: 0;
+    transition: linear 0.3s;
+}
+
+.timeline-line-l {
+    border-right: 0.5rem dashed $white;
+}
+
+.timeline-line-r {
+    border-left: 0.5rem dashed $white;
 }
 
 .timeline-node {
-    width: 2rem;
-    height: 2rem;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.25rem;
     border-radius: 50%;
     border: 1px solid $white;
     background-color: $black;
@@ -84,5 +105,23 @@
 }
 
 .decade-blurb {
-    min-height: 60vh;
+    min-height: 50vh;
+}
+
+.decade-content {
+    border-top: 5vh solid transparentize($color: $primary, $amount: 0.5);
+    margin-top: -5vh;
+}
+
+.decade-green-content {
+    background-color: $primary;
+    padding-bottom: 0;
+}
+
+.timeline-name {
+    color: $primary-light;
+}
+
+.timeline-year {
+    font-family: $font-body;
 }
