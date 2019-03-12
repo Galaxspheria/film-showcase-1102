@@ -85,7 +85,7 @@ class App extends Component {
                   <Route path="/decade/:id" render={(props) => <Decade {...props} data={this.state.data} />} />
                   <Route path="/author/:id" render={(props) => <Author {...props} data={this.state.data} />} />
                   <Route path="/movie/:id" render={(props) => <Movie {...props} data={this.state.data} />} />
-                  <Footer/>
+                  {/* <Footer/> */}
                 </div>
               :<div className="loader-parent"><div className="loader"></div></div>}
             </ScrollToTop>
