@@ -128,3 +128,18 @@
     font-size: 0.9rem;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 1208px) {
+    #decade-timeline {
+        flex-wrap: wrap;
+    }
+
+    .tl-item {
+        width: 50%;
+        max-height: 33.3333vh;
+    }
+
+    .tl-content {
+        display: none;
+    }
+}
