@@ -6,8 +6,8 @@ class AuthorList extends Component {
     render() {
         return (
             <section className="AuthorList page-fade">
-                <h1>The Hidden Figures</h1>
-                <h2>Subtitle</h2>
+                <h1 className="author-list-title">The Hidden Figures</h1>
+                <h3 className="author-list-subtitle">Subtitle</h3>
                 <div className="author-list-parent">
                     {this.props.data.author.elements.map((d, i) => (
                         <Link to={"/author/"+i} key={i} className="nolink author-list-item">

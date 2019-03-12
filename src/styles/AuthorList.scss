@@ -9,6 +9,13 @@
     width: 33.3333%;
     flex-shrink: 0;
     flex-grow: 0;
+    transition: 0.3s linear;
+
+    &:hover {
+        text-decoration: none;
+        color: $white;
+        transform: scale(1.1);
+    }
 }
 
 .author-list-image {
@@ -42,4 +49,19 @@
 
 .author-list-years {
     color: $white;
+}
+
+.author-list-title, .author-list-subtitle {
+    margin: auto;
+    text-align: center;
+    font-family: $font-body;
+    color: $white;
+}
+
+.author-list-title {
+    margin-top: 3rem;
+}
+
+.author-list-subtitle {
+    margin-bottom: 2rem;
 }
