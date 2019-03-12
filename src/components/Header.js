@@ -10,7 +10,7 @@ class Header extends Component {
 
                 </div>
                 <div className="Header fade-down">
-                    <Link to="/"><img src="https://via.placeholder.com/50"/></Link>
+                    <Link to="/"><img src={this.props.data.home.elements[0]["Header Image"]} alt='' className="header-img"/></Link>
                     <div style={{textAlign: 'right', flexGrow: 1}}>
                         <NavLink className="header-button" activeClassName="hb-active" exact to="/">Home</NavLink>
                         <NavLink className="header-button" activeClassName="hb-active" to="/authors">Authors</NavLink>

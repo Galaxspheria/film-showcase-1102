@@ -61,6 +61,7 @@ class App extends Component {
             }
           }
           data.home.elements[0]["Hero Image"] = that.driveURLConvert(data.home.elements[0]["Hero Image"])
+          data.home.elements[0]["Header Image"] = that.driveURLConvert(data.home.elements[0]["Header Image"])
           that.setState({data})
       },
       simpleSheet: false } )
@@ -79,7 +80,7 @@ class App extends Component {
             <ScrollToTop>
               {this.state.data?
                 <div>
-                  <Header/>
+                  <Header data={this.state.data}/>
                   <Route path="/" exact render={(props) => <Home {...props} data={this.state.data} />} />
                   <Route path="/about/" render={(props) => <About {...props} data={this.state.data} />} />
                   <Route path="/authors/" render={(props) => <AuthorList {...props} data={this.state.data} />} />
