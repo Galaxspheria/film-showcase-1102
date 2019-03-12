@@ -1,3 +1,5 @@
+@import './Theme.scss';
+
 .direct-head {
   font-size: 35px;
 }
@@ -23,24 +25,34 @@
 }
 
 img.author {
-  height: 200px;
+  max-height: 20rem;
   width: auto;
+  max-width: 100%;
   display: block;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
-.adapted-works {
-  margin: 20px;
-  width: auto;
-  height: auto;
-  border: 5px solid red;
-  background-color: #D8D8D8;
+.adapted-work-flex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .adapted {
   display: inline-block;
-  width: 25%;
-  margin: 20px;
-  padding: 20px;
+  width: 28.333333333%;
+  text-align: center;
+  margin: 5%;
+  padding-bottom: 2rem;
+}
+
+.adapted > h4 {
+  font-family: $font-body;
+}
+
+.adapted > h5 {
+  font-family: $font-body;
 }
 
 .impact-sect {

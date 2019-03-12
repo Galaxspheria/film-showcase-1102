@@ -36,6 +36,7 @@ class App extends Component {
               for (var a in data.author.elements) {
                 if (data.author.elements[a].Author == data.film.elements[d]["Original Author"]) {
                   data.film.elements[d].AuthorID = a
+                  data.author.elements[a].MovieID = d
                 }
               }
             }
