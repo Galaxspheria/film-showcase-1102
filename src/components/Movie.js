@@ -53,11 +53,11 @@ class Movie extends Component {
 
           
             {filmSheet[this.state.id]["Description"]?
-            <div className="container-fluid theme-primary text-block">
+            <div className="container-fluid theme-test text-black text-block">
               <div className="row">
-                <h3 className="text-center text-white" style={{margin: "auto"}}>Movie Description</h3>
+                <h3 className="text-center" style={{margin: "auto"}}>Movie Description</h3>
               </div>
-              <div className="row text-white">
+              <div className="row">
                 {filmSheet[this.state.id]["Description"].split("\n").map((p, i) =>
                 <p key={i}>{p}</p>
                 )}
@@ -79,9 +79,9 @@ class Movie extends Component {
             
             
             {filmSheet[this.state.id]["Works Cited"]?
-            <div className="container-fluid theme-primary text-block text-white">
+            <div className="container-fluid theme-primary text-block text-white works-cited">
               <div className="row">
-                <h3 className="text-center">Works Cited</h3>
+                <h3 className="text-center" style={{margin: "auto"}}>Works Cited</h3>
               </div>
               <div className="row">
                 {filmSheet[this.state.id]["Works Cited"].split("\n").map((p, i) =>

@@ -8,11 +8,25 @@
     background-color: $test
 }
 
+.theme-test {
+    background-color: $white
+}
+
 .text-light {
     color: $white
 }
 
+.text-black {
+    color: $black
+}
+
 .text-block {
+    font-size: 23px;
     padding-left: 400px;
-    padding-right: 400px
+    padding-right: 400px;
+}
+
+.works-cited {
+    font-size: 15px;
+    margin: "auto";
 }
