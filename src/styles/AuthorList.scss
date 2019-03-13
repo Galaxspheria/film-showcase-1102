@@ -3,13 +3,15 @@
 .author-list-parent {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .author-list-item {
-    width: 33.3333%;
     flex-shrink: 0;
     flex-grow: 0;
     transition: 0.3s linear;
+    margin-left: 5%;
+    margin-right: 5%;
 
     &:hover {
         text-decoration: none;
@@ -19,8 +21,8 @@
 }
 
 .author-list-image {
-    width: 10rem;
-    height: 10rem;
+    width: 15rem;
+    height: 15rem;
     max-width: 100%;
     position: relative;
     overflow: hidden;
