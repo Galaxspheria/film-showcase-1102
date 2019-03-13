@@ -29,12 +29,12 @@ class Decade extends Component {
         <div className="intro-blurb decade-blurb">
           <Link className="back-button" to="/"><i className="fas fa-arrow-left"></i></Link>
           <h1>{decade.Name}</h1>
-          <h3 style={{textTransform: "uppercase"}}>{decade.Era}</h3>
+          <h2 style={{textTransform: "uppercase"}}>{decade.Era}</h2>
           <div className="hero-img" style={{backgroundImage: "url(" + decade.Image + ")"}}></div>
         </div>
         <div className="decade-content">
           <div className="intro-blurb decade-green-content">
-            <h2>Era Summary</h2>
+            <h3>Era Summary</h3>
             {decade.Summary.split("\n").map((p, i) =>
               <p key={i}>{p}</p>
             )}

@@ -46,8 +46,8 @@ class Author extends Component {
                     </div>
                 </div>
 
-                <div className='theme-primary' style={{paddingTop: '2rem'}}>
-                <p className='direct-head text-light' style={{textAlign: 'center'}}>Adapted Work</p>
+                <div className='theme-primary' style={{paddingTop: '3rem'}}>
+                <h3 className="text-center text-light">Adapted Work</h3>
                 <div className='theme-primary adapted-work'>
                 <div className="adapted-work-flex">
                     <div className='adapted'>
