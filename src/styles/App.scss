@@ -24,14 +24,14 @@ code {
 
 .page-fade {
   opacity:0;
-  animation:fadeIn ease-out 0.75s;
+  animation:fadeIn ease-out 0.5s;
   animation-fill-mode:forwards;
   animation-delay: 0s;
 }
 
 .fade-down {
   opacity: 0;
-  animation: fadeDown ease-out 0.75s;
+  animation: fadeDown ease-out 0.5s;
   animation-fill-mode: forwards;
   animation-delay: 0s;
 }

@@ -17,6 +17,7 @@ class Movie extends Component {
             <div>
               <div className="container-fluid" style={{padding: 0}}>
               <div className="row header-parent">
+                <button className="back-button" onClick={() => this.props.history.goBack()}><i className="fas fa-arrow-left"></i></button>
                 <div className="col-sm movie-main-img-parent">
                   <img className="rounded mx-auto d-block movie-main-img" src={filmSheet[this.state.id][ "Image 1"]} alt=""></img>
                 </div>
