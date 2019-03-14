@@ -22,8 +22,22 @@ class Decade extends Component {
     this.setState({films})
   }
 
+  changePage(newID) {
+    this.setState({id: newID})
+    this.props.history.push('/decade/'+newID)
+  }
+
   render() {
     const decade = this.props.data.decade.elements[this.state.id]
+    var last = null
+    var next = null
+    if (parseInt(this.state.id,10) - 1 >= 0) {
+      last = this.props.data.decade.elements[this.state.id - 1]
+    }
+    if (parseInt(this.state.id,10) + 1 < this.props.data.decade.elements.length) {
+      next = this.props.data.decade.elements[parseInt(this.state.id,10) + 1]
+    }
+
     return (
       <div className="Decade page-fade">
         <div className="intro-blurb decade-blurb">
@@ -76,6 +90,20 @@ class Decade extends Component {
               )}
             </div>
           :null}
+          <div className="decade-next-last-parent">
+            {console.log("/decade/"+(this.state.id - 1))}
+            {last?
+            <button onClick={() => this.changePage(this.state.id - 1)} className="decade-last" style={{backgroundImage: "url(" + last.Image + ")"}}>
+              <h2>{last.Name}</h2>
+              <h3><i className="fas fa-arrow-left"></i> PREV</h3>
+            </button>
+            :null}
+            {next?
+            <button onClick={() => this.changePage(parseInt(this.state.id,10) + 1)} className="decade-next" style={{backgroundImage: "url(" + next.Image + ")"}}>              <h2>{next.Name}</h2>
+              <h3>NEXT <i className="fas fa-arrow-right"></i></h3>
+            </button>
+            :null}
+          </div>
         </div>
       </div>
     );
