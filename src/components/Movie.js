@@ -32,10 +32,10 @@ class Movie extends Component {
                     <h4 className="text-light">Director: {filmSheet[this.state.id]["Director"]}</h4>
                   </div>
                     <div className="row">
-                    <h4 className="text-light">Starring: {filmSheet[this.state.id]["Starring"]}</h4>
+                    <h4 className="text-light">Starring:<br/>{filmSheet[this.state.id]["Starring"]}</h4>
                   </div>
                   <div className="row">
-                    <h4 className="text-light">Original Story: {filmSheet[this.state.id]["Original Work"]}</h4>
+                    <h4 className="text-light">Original Story:<br/>{filmSheet[this.state.id]["Original Work"]}</h4>
                   </div>
                     <div className="row">
                     {filmSheet[this.state.id].AuthorID?

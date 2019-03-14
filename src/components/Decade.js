@@ -69,8 +69,8 @@ class Decade extends Component {
             :null}
           </div>
           {decade["Works Cited"]?
-            <div className = "intro-blurb">
-              <h4>Works Cited</h4>
+            <div className = "intro-blurb" style={{display: 'block'}}>
+              <h4 style={{margin: 'auto', textAlign: 'center', marginBottom: '8px'}}>Works Cited</h4>
               {decade['Works Cited'].split("\n").map((p, i) =>
                 <p key={i}>{p}</p>
               )}

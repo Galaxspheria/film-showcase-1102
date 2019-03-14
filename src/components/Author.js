@@ -32,8 +32,8 @@ class Author extends Component {
                                 <h4 className="text-light">Important Work:</h4>
                                 <p className='author-subdata text-light'>
                                 {author['Important Work 1 Name']}
-                                {author['Important Work 2 Name']? ", "+author['Important Work 2 Name'] : null}
-                                {author['Important Work 3 Name']? ", "+author['Important Work 3 Name'] : null}
+                                {author['Important Work 2 Name']? <div>{author['Important Work 2 Name']}</div> : null}
+                                {author['Important Work 3 Name']? <div>{author['Important Work 3 Name']}</div> : null}
                                 </p>
                             </div>
                             <div className="row">
