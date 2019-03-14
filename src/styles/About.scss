@@ -1,0 +1,20 @@
+@import './Theme.scss';
+
+.credits-container {
+    display: flex;
+    width: 100%;
+}
+
+.credit-parent {
+    width: 25%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    line-height: 0.75em;
+}
+
+.credit-header {
+    font-size: 0.8em;
+    color: $primary-light;
+    font-weight: bold;
+    line-height: 4em;
+}
