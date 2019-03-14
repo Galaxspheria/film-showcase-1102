@@ -77,7 +77,7 @@ class Author extends Component {
                 {author["Impact"]?
                 <div className="container-fluid theme-dark text-white text-block">
                 <div className="row">
-                    <h3 className="text-center">Author Impact</h3>
+                    <h3 className="text-center">Legacy</h3>
                 </div>
                 <div className="row">
                     {author["Impact"].split("\n").map((p, i) =>

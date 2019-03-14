@@ -56,7 +56,7 @@ class Movie extends Component {
             {filmSheet[this.state.id]["Description"]?
             <div className="container-fluid theme-test text-black text-block">
               <div className="row">
-                <h3 className="text-center">Movie Description</h3>
+                <h3 className="text-center">About the Film</h3>
               </div>
               <div className="row">
                 {filmSheet[this.state.id]["Description"].split("\n").map((p, i) =>
@@ -69,7 +69,7 @@ class Movie extends Component {
             {filmSheet[this.state.id]["Impact"]?
             <div className="container-fluid theme-dark text-white text-block">
               <div className="row">
-                <h3 className="text-center">Movie Impact</h3>
+                <h3 className="text-center">Impact</h3>
               </div>
               <div className="row">
                 {filmSheet[this.state.id]["Impact"].split("\n").map((p, i) =>
