@@ -48,7 +48,7 @@ class Decade extends Component {
         </div>
         <div className="decade-content">
           <div className="intro-blurb decade-green-content">
-            <h3>Era Summary</h3>
+            <h3>About the Era</h3>
             {decade.Summary.split("\n").map((p, i) =>
               <p key={i}>{p}</p>
             )}
