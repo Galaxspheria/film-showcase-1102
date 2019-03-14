@@ -29,12 +29,14 @@ class Author extends Component {
                                 <h2 className="movie-header-title text-light">{author['Birth Year']} - {author['Death Year']}</h2>
                             </div>
                             <div className="row">
+                                <div>
                                 <h4 className="text-light">Important Work:</h4>
                                 <p className='author-subdata text-light'>
                                 {author['Important Work 1 Name']}
                                 {author['Important Work 2 Name']? <div>{author['Important Work 2 Name']}</div> : null}
                                 {author['Important Work 3 Name']? <div>{author['Important Work 3 Name']}</div> : null}
                                 </p>
+                                </div>
                             </div>
                             <div className="row">
                                 {author.MovieID?
