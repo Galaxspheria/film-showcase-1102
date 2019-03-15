@@ -11,8 +11,12 @@ class Decade extends Component {
   }
 
   componentDidMount() {
-    var low = parseInt(this.props.data.decade.elements[this.state.id]["Start Year"], 10)
-    var high = parseInt(this.props.data.decade.elements[this.state.id]["Stop Year"], 10)
+    this.refreshFilmList(this.state.id)
+  }
+
+  refreshFilmList(id) {
+    var low = parseInt(this.props.data.decade.elements[id]["Start Year"], 10)
+    var high = parseInt(this.props.data.decade.elements[id]["Stop Year"], 10)
     var films = []
     for (var film in this.props.data.film.elements) {
       if (low <= parseInt(this.props.data.film.elements[film].Year, 10) && parseInt(this.props.data.film.elements[film].Year, 10) <= high) {
@@ -24,6 +28,7 @@ class Decade extends Component {
 
   changePage(newID) {
     this.setState({id: newID})
+    this.refreshFilmList(newID);
     this.props.history.push('/decade/'+newID)
   }
 
